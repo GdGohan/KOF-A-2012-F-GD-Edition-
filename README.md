@@ -1,7 +1,7 @@
 # KOF-A-2012-F-GD-Edition-
 Test, Android 14 support + Fullscreen and Hide Navigation Bar
 
-there will be changes in the apk, v1 and v2 is just the base non-functional/partially apks
+there will be changes in the apk, v1 is just the base non-functional/partially apks
 
 apk:
 https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/tag/V1
