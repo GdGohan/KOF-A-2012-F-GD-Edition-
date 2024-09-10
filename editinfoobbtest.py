@@ -109,7 +109,7 @@ updates = {
     "Sectors per Track": 32,
     "Number of Heads": 64,
     "Hidden Sectors": 0,
-    "Total Sectors (32-bit)": 2457600,
+    "Total Sectors (32-bit)": 2345048,
     "Sectors per FAT (32-bit)": 2288,
     "Flags": 0,
     "Version": 0,
