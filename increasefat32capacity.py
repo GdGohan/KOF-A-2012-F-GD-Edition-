@@ -13,16 +13,31 @@ def aumentar_imagem_fat32(arquivo_imagem, novo_tamanho_mb):
             print(f"O arquivo já tem {tamanho_atual_bytes / (1024 * 1024)} MB, que é maior ou igual ao novo tamanho.")
             return
         
-        # Aumenta o arquivo preenchendo com zeros
-        espaco_extra = novo_tamanho_bytes - tamanho_atual_bytes
-        print(f"Aumentando o arquivo para {novo_tamanho_mb} MB (espaço extra: {espaco_extra / (1024 * 1024)} MB)...")
+        # Localiza a posição onde "com" aparece no final do arquivo
+        img_file.seek(0)
+        conteudo = img_file.read()
+        posicao_com = conteudo.rfind(b"com")
         
-        img_file.write(b'\x00' * espaco_extra)
+        if posicao_com == -1:
+            print("String 'com' não encontrada no arquivo.")
+            return
+        
+        print(f"Encontrada a string 'com' na posição {posicao_com}. Inserindo bytes antes.")
+        
+        # Insere os novos bytes antes da string "com"
+        espaco_extra = novo_tamanho_bytes - tamanho_atual_bytes
+        novos_bytes = b'\x00' * espaco_extra
+        
+        # Atualiza o arquivo, inserindo os novos bytes antes de "com"
+        novo_conteudo = conteudo[:posicao_com] + novos_bytes + conteudo[posicao_com:]
+        
+        # Sobrescreve o arquivo com o novo conteúdo
+        img_file.seek(0)
+        img_file.write(novo_conteudo)
     
     # Modifica o setor de boot para refletir o novo tamanho
     modificar_boot_sector(arquivo_imagem, novo_tamanho_bytes)
     print(f"Tamanho da imagem FAT32 atualizado para {novo_tamanho_mb} MB.")
-
 
 def modificar_boot_sector(arquivo_imagem, novo_tamanho_bytes):
     # Tamanho do setor em bytes (geralmente 512 para FAT32)
@@ -40,7 +55,6 @@ def modificar_boot_sector(arquivo_imagem, novo_tamanho_bytes):
         img_file.write(novo_total_setores.to_bytes(4, byteorder='little'))
     
     print(f"Campo 'Total Sectors' atualizado no setor de boot para {novo_total_setores} setores.")
-
 
 # Exemplo de uso
 arquivo_imagem = "main.11.com.snkplaymore.kof2012a.obb"  # Nome do arquivo da imagem FAT32
