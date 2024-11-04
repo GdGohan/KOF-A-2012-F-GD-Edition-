@@ -4,8 +4,6 @@ Test, Android 14 support + Fullscreen and Hide Navigation Bar
 apk:
 https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/
 
-If the game crashes when starting, install the apk again
-
 Extract and edit obb:
 https://www.winimage.com/download.htm
 
