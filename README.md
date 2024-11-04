@@ -1,12 +1,10 @@
 # KOF-A-2012-F-GD-Edition-
 Test, Android 14 support + Fullscreen and Hide Navigation Bar
 
-apk:
+Releases:
 https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/
 
-Extract and edit obb:
-https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/
-
+Extract and edit obb (Windows):
 https://www.winimage.com/download.htm
 
 https://anyburn.com/download.php
