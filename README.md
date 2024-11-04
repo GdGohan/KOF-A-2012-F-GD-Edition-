@@ -5,6 +5,8 @@ apk:
 https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/
 
 Extract and edit obb:
+https://github.com/GdGohan/KOF-A-2012-F-GD-Edition-/releases/tag/V5.2
+
 https://www.winimage.com/download.htm
 
 https://anyburn.com/download.php
