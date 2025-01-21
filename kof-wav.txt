@@ -1,5 +1,0 @@
-bit rate: 256
-
-for bit rate 705:
-V:136%
-P:5.5db
